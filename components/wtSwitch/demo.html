@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../public/js/libs/wtSwitch/css/wtSwitch.css" rel="stylesheet"/>
+    <link href="../../public/styles/components.css" rel="stylesheet"/>
+</head>
+<body>
+<article>
+    <section>
+        <h2>checkbox</h2>
+        <div name="A" text="haha" value="1" class="checkbox1"></div>
+        <div name="B" text="huhu" value="2" class="checkbox1"></div>
+        <div name="C" text="hehe" vlaue="3" state="disabled" class="checkbox1"></div>
+    </section>
+    <section>
+        <pre><code>wtSwitch.init($(".checkbox1"),"checkbox",function(data){console.log(data);})</code><button>初始化checkbox</button></pre>
+    </section>
+
+    <section>
+        <h2>radio</h2>
+        <div name="radioName" text="haha" value="1"  class="radio1"></div>
+        <div name="radioName" text="huhu" value="2"  class="radio1"></div>
+        <div name="radioName" text="hehe" state="disabled,on" value="3"  class="radio1"></div>
+    </section>
+    <section>
+        <pre><code>wtSwitch.init($(".radio1"),"radio",function(data){console.log(data);})</code><button>初始化radio</button></pre>
+    </section>
+
+    <section>
+        <h2>special-特殊开关</h2>
+        <div name="specialNmae"  class="switch1"></div>
+    </section>
+    <section>
+        <pre><code>wtSwitch.init($(".switch1"),"special",function(data){console.log(data);})</code><button>初始化开关按钮状态</button></pre>
+    </section>
+</article>
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/libs/wtSwitch/js/wtSwitch.js" type="text/javascript"></script>
+<script>
+    $(document).on("click", "button", function () {
+        var code = $(this).closest("section").find("pre code").text();
+        new Function(code)();
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+@import "common.less";
+/*简历详情页样式*/
+.detail-top {height:37px;}
+.resume-name-btn {height: 36px; float: left; border-top:1px solid @color_gray_7;border-left:1px solid @color_gray_7;}
+.resume-menu {white-space: nowrap;font-size: 0;}
+.resume-menu li { width: 96px;display: inline-block;height:36px; padding: 0 10px;
+  color:@color_gray_2; line-height: 36px; border-right: 1px solid @color_gray_7;
+  background-color: #f3f3f5;font-size: 14px;vertical-align: top;
+  span{ display: inline-block;width: 50px;overflow: hidden; text-overflow: ellipsis; }
+  .wt-icon30-80 {float: right;margin: 14px 0px 0 15px;}
+}
+.resume-menu li.hover {background-color: @color_gray_13; color: #5d5d5d;}
+
+.next-turn {float: right; width: 25px; height: 36px; display: inline-block; border-right: 1px solid @color_gray_7;border-left: 1px solid @color_gray_7;
+  .wt-icon500-0 {margin:10px 0 0 3px;}
+}
+.resume-btn {float: right;padding-top:1px;}
+.resume-btn a {height:29px; float: right; margin-left: 10px; line-height: 29px; color:@color_gray_2; font-size: 14px; display:inline-block; padding: 0 15px;float: right; background-color: @color_gray_13; border: 1px solid @color_gray_7;}
+.resume-btn a span.arrow-b {width:0; height:0; display: inline-block; border-top:5px solid @color_gray_3; border-left:5px solid transparent; border-right:5px solid transparent; vertical-align: middle; margin: -2px -5px 0 3px;}
+.detail-main {background: @panel_color_gray; border:1px solid @border_color_1; clear: both; overflow: hidden;}
+.noBorder {background: @panel_color_white; border:none; padding:30px 50px;}
+.edge {background: @panel_color_white; border:1px solid @border_color_1; padding:30px 50px;}
+.main-left {margin-right:240px; min-height:600px; overflow: hidden; padding:20px 25px 20px 40px;position: relative; background-color: @color_gray_13;}
+.update-time {height:30px; float: right; color: @color_gray_2; overflow: hidden;}
+.job-top  a{ font-size: 14px; color: @color_blue_4;}
+.job-top  a span.wt-icon40-80 {margin-right: 5px;}
+.detail-tit {padding:0 20px;
+  h1 {font-size: 24px; color: @color_gray_1;}
+  h2 {font-size: 14px; color: @color_gray_1;
+    span {margin-left: 40px;}
+  }
+}
+.dtl-wtSelect {padding:5px 20px 0;}
+
+.main-right {width:210px; padding: 10px 13px 0 17px; height: 100%; float: right;}
+.operation {border-bottom:1px solid #e8e4e4; overflow: hidden; padding-bottom: 5px;}
+.operation:last-child {border:none;}
+.small-arrow-r {.icon10; margin-top: 20px; background-position: -30px -100px;}
+.small-arrow-b {.icon10; margin-top: 20px; background-position: -10px -100px;}
+.opt-tit {line-height: 50px; padding-left: 10px; font-size: 14px; margin-bottom: 0;}
+.opt-tit .wt-icon30-80 {margin-top: 20px;}
+.opt-ul li {width:50%; font-size: 12px; float: left; margin: 10px auto;}
+.opt-ul li span {float: left;vertical-align: middle; margin:-2px 10px 0 20px;}
+.wt-find-others{color:@color_blue_5;}
+.wt-orange{color:@color_orange_1;}
+.icon01 {.icon30;background-position:-240px -180px;}
+.icon02 {.icon30;background-position:-270px -180px;}
+.icon03 {.icon30;background-position:-300px -180px;}
+.opt-ul li:last-child {width:100%;}
+
+.opt-list {padding: 0 8px 10px;}
+.opt-list img{border-radius: 50%; float: left; margin-bottom: 10px;}
+.p-name {float: right;}
+.opt-list em{width:58px; height:20px; margin-top: 10px; display: block; font-style: normal; line-height:20px; border-radius: 10px; text-align:center; background-color: #f19c0d; color: @color_gray_13;}
+.opt-list p {clear:both; font-size: 13px;}
+.btn-more {height:20px;display:block; line-height:20px; font-size: 13px; color:@color_gray_2; margin: 0px 0 10px 10px}
+.btn-more:hover { text-decoration:none; color: @color_gray_2}
+.btn-more span{.icon10; vertical-align:middle;margin: 0px 0 0 5px;background-position:-30px -100px;}
+
+.wt-state-ud {padding-bottom: 10px; overflow: hidden;}
+.wt-state-ud  li{float: left; padding-left: 20px;font-size: 12px;}
+.wt-state-ud  li span{margin:-2px 8px 0 3px;}
+.wt-per-position,.wt-per-position:hover {height: 20px;padding: 0 10px;  display: inline-block; font-size: 12px; border-radius: 10px; float: right; line-height: 20px;
+  margin-top:15px; text-align: center; color: @color_gray_13; background-color: #ffa442;}
+.wt-rsm-evaluate {line-height:20px;padding:0 0 10px 15px;font-size: 12px; text-indent: 2em;}
+.wt-rsm-evaluate a{color: @color_gray_2;}
+.wt-rsm-evaluate a span{margin-top:0;}
+.wt-detail-remarks{height:32px; margin: 0 0 10px 10px; border:1px solid #e4e4e4; background-color: @color_gray_13;}
+.wt-icon-pen {width:20px; height: 20px; display: inline-block; vertical-align: middle; margin: -2px 0 0 5px; border:1px solid #aaa;}
+.wt-detail-remarks input{width:100%;padding:0 10px;height:100%; box-sizing: border-box; border:none; color: #707070; font-size: 12px;}
+.wt-detail-remarks input:focus{outline:none; color: #707070;}
+.icon-pen input {width:70%;padding:0 5px;}
+.wt-browseWay {padding: 0px 0 15px 10px;
+  .wt-switch {float: left;
+    input {vertical-align: top; margin-right: 5px;}
+  }
+}
+.input-slc {width:13px; height: 13px; display: inline-block; vertical-align: middle; margin: -2px 5px 0 1px; border:1px solid #aaa;}
+.wt-sure-btn {width:52px; height: 22px; font-size: 12px; color: @color_gray_13; float: right; line-height: 22px; text-align: center; background-color: @color_blue_4;}
+.wt-sure-btn:hover { text-decoration: none;color: @color_gray_13;}
+.text-link {font-size: 12px; margin-right: -10px; clear: both; color:@color_gray_7;padding: 30px 0 0 5px;
+  a {margin:0 10px; color: @color_gray_2; text-decoration: underline;}
+}
+
+.wt-opt-btn {width:157px; height: 30px;line-height: 30px; margin-left: 10px; text-align: center; color: @color_gray_13; background-color: #ffa442;}
+.wt-opt-btn a{width:17px; height: 30px; float: right; background-color: #eb9335;}
+.wt-opt-btn a span{width:0px; height:0px; margin: 13px auto 0; display: block; border-top:4px solid @color_gray_13; border-left:4px solid transparent; border-right:4px solid transparent;}
+.wt-opt-ul {padding:10px 15px 0 15px;}
+.wt-opt-ul li{width:50%;float:left; margin-bottom: 15px; font-size: 12px;
+  a {color:@color_gray_2; text-decoration: none;
+    &.hover {color: @color_blue_5;}
+    span{width:20px; height:20px; margin: -0px 10px 0 5px; display: inline-block; vertical-align: middle;}
+  }
+}
+.quick-score {padding:0px 0 15px 10px;font-size: 14px;}
+.start-num {width:99px;height:16px; display: inline-block; margin: 0 5px; background: url("../../candidate/images/quick-score.png")}
+.quick-score font {color: #ffa442;}
+.quick-score font em {font-size: 18px; font-style: normal;}
+
+
+
+
+.job-tit {height:30px; float: right; font-size: 14px; color: #777;  }
+.job-tit-stay {height:20px; line-height:20px; font-size: 12px;display:inline-block; padding:0px 5px; border-radius: 15px; color: @color_gray_13; background-color: #fe9d2b; }
+.job-tit .triangle {cursor:pointer;}
+.job-detail {padding:20px 10px; border-bottom:1px solid #ececec;}
+.job-detail img{float: left;}
+
+.job-name {padding: 10px 0 0 25px; margin-left:98px;}
+.job-name font{font-size: 18px;}
+
+
+
+
+.job-relation,.job-uni,.job-link {display: inline-block;line-height: 20px;border-radius: 10px; margin: 0 2px;}
+.job-relation {padding:0 10px; background-color: #e9e9e9;
+  span {vertical-align: middle; margin-top: -2px;}
+}
+.job-uni {padding:0 5px; font-size:12px;background-color: #a4b0bc; color: @color_gray_13; }
+.job-link {padding:0 5px; background-color: #5ca9f7; color: @color_gray_13; }
+.job-name .triangle {margin-left:-5px;}
+.job-attr {margin-left:98px;padding: 8px 0 0 25px; overflow: hidden;}
+.job-attr li{float:left; font-size: 14px; margin-right: 20px;
+  span {vertical-align: middle;}
+}
+.job-opt {padding:25px 5px; font-size: 16px;overflow: hidden}
+.job-opt-ul {float: left; }
+.job-opt-ul li{float: left; line-height: 30px; margin-right: 40px; cursor: pointer;
+  a {color:@color_gray_2; text-decoration: none; }
+}
+.job-opt-ul li.hover a{height:100%; display:inline-block; border-bottom:2px solid #5ca9f7;}
+.job-opt-ul li.hover a{color: #5ca9f7;}
+.job-btn-more {float: left;line-height: 30px; color: @color_gray_2;}
+.job-btn-more span{vertical-align: middle; margin-top: -2px;}
+
+.job-category {line-height:30px;font-size: 16px; color: #5ca9f7; padding: 0px 5px 15px 5px;}
+.job-category span{width:30px; height: 30px; display: inline-block; vertical-align: middle; margin: -2px 10px 0 0;}
+.job-cat-table {width:100%; margin: 0 10px 30px;}
+.job-cat-table td{width:50%; line-height: 25px; font-size: 14px;}
+.job-exp-group {padding:0 0 30px 5px; box-sizing: border-box; font-size: 14px;}
+.job-exp-tit{line-height: 43px; padding: 0 0 0 20px; background-color: #f2f2f2;}
+.job-exp-main {padding:10px 10px 0 20px; line-height: 25px; font-size: 14px;}
+.job-com-p {padding:0 0 30px 10px; line-height: 25px; font-size: 14px;}
+.btn-download-all {display: inline-block; color: #5ca9f7; text-decoration: underline; margin: 10px 5px; clear: both;}
+.download-label {padding: 10px 5px;
+  >span {float: left; margin: 5px 10px 0 0;}
+}
+.download-label a {color: #5ca9f7; text-decoration: underline; margin-right: 15px; font-size: 12px;}
+.download-label p {margin: 0;}
+.blue-triangle{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 4px solid #5ca9f7;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  vertical-align: middle;
+}
+
+.basic-info {color: @color_gray_1; padding:10px 0 0 20px;}
+.table-detail {width:90%;margin:0 20px; overflow: hidden;}
+.table-detail li{width:50%;float:left; line-height: 30px; color: @color_gray_3}
+.basic-dtl {padding:0 20px;}
+.basic-dtl dt{margin-top:20px; line-height: 30px;}
+.zp-process {margin: 20px 0;height:50px;}
+.process-ul {
+  li {float: left;
+    span {width:24px;height: 24px; line-height: 16px; text-align: center; font-size: 12px;border: 4px solid @color_gray_15; display:block; border-radius: 15px; background-color:@color_green_2; color: @color_gray_13;}
+    p {font-size: 12px; width: 70px; text-align: center; margin:10px -25px 0;}
+    &.bottom-line {width:50px; height: 10px; position: relative; margin: 6px -4px 0 -4px; background-color: @color_green_3; border-top: 3px solid @color_gray_15; border-bottom: 3px solid @color_gray_15;}
+  }
+}
+.btn-more-dtl {width:100%; clear: both; height:30px; cursor: pointer; line-height: 30px; text-align: center; font-size: 12px; color: @color_gray_2; display: block; background-color: @color_gray_14;}
+.btn-more-dtl:hover {text-decoration: none;}
+.p-dtl-list {padding:0 20px;display:none;
+  dt{margin:30px 0 20px;
+    font { border-top:1px solid @color_gray_6; display:block;}
+    p { margin-top: -10px; padding-right: 10px; float: left; background-color: @color_gray_13;
+      a {color: @color_blue_1;}
+    }
+    span { margin-top: -10px; padding-left: 10px; float: right; background-color: @color_gray_13;}
+  }
+  dd{ clear: both;
+    p {padding-left:15px; line-height: 20px;position: relative;
+      span{position: absolute; left:0px; top:6px;}
+      .wt-icon560-60 {vertical-align: middle; margin-top: -2px;}
+    }
+  }
+}
+#btn-more-hide {display: none;}
+.table-approval {width:100%; margin:10px 13px 30px; border-left:1px solid @color_gray_6; border-top:1px solid @color_gray_6;
+  th {line-height:40px;text-align: center; background-color:@color_gray_11;border-right:1px solid @color_gray_6; border-bottom:1px solid @color_gray_6;}
+  td {line-height:40px;text-align: center; border-right:1px solid @color_gray_6; border-bottom:1px solid @color_gray_6;}
+}
+.goBack {width:36px; height: 36px; box-shadow: 0px 0px 5px #aaa; background-color: @color_gray_9; position: fixed; bottom: 20px; right:230px;}
+.goBack .wt-icon600-0 {margin: 7px 0 0 8px;}
+
+.resumeNum {height:160px;padding:0 10px;  position: relative;
+  .resumeNum-in {display:block; color: @color_gray_2; margin-top: -110px; text-align: center; font-size: 16px;
+    em {font-size: 30px;color: @color_gray_1; font-style: normal;}
+  }
+}
+
+/*历史记录页面样式*/
+.history-opr {margin:0 5px;
+  .opr-search {
+    .keyword {width:230px;height:33px; padding:0 10px; margin-right: 10px; border:1px solid @color_gray_7; vertical-align: top; outline: none;}
+    .opr-type {width:180px;height:33px; line-height: 33px; margin-right: 10px; padding:0 5px; border:1px solid @color_gray_7; display: inline-block;
+      .wt-icon50-90 {float:right;margin-top: 10px;}
+    }
+    .opr-time {width:125px;height:33px; line-height: 33px; padding:0 8px; border:1px solid @color_gray_7; display: inline-block;
+      input {width:80px;height:31px; line-height: 31px; vertical-align: top; border: none; outline: none;}
+      .wt-icon640-0 {float:right; vertical-align:middle;margin-top: 7px;}
+    }
+  }
+  ul {margin-left:10px;border-left:1px solid @color_gray_10;
+    li { position: relative; left: -9px;
+      h1 {font-size: 16px;
+        span { vertical-align:middle; margin:-2px 20px 0 0; background-color: @color_gray_13}
+      }
+      div {height:53px;line-height: 53px; padding: 0 20px; margin-left: 35px; position: relative; border:1px solid @color_gray_6; background-color: @color_gray_11;
+        .left-tgl {width:15px; height: 16px; position: absolute; left: -15px; top:15px; background: url("../../candidate/images/left-triangle.jpg")}
+        .color-or {color:@color_orange_2;}
+      }
+    }
+  }
+  .more-opr {clear: both; margin-top: 15px; display:inline-block; color: @color_gray_2;
+    .wt-icon620-20 {vertical-align: middle; margin-top: -2px;}
+  }
+}
+
+/*历史评价页面样式*/
+.Int-round,.Int-round-border {line-height:30px; height:30px;
+  .Int-round-left {float: left;
+    font {font-size: 16px;
+      span {
+        vertical-align: middle; margin: -2px 8px 0;
+      }
+    }
+    .r-c-g {height:20px; line-height: 20px; padding: 0 15px; margin: 0 15px; background-color: @color_green_2;color: @color_gray_13; border-radius: 10px;}
+    .r-c-o {height:20px; line-height: 20px; padding: 0 15px; margin: 0 15px; background-color: @color_orange_2;color: @color_gray_13; border-radius: 10px;}
+    .r-score {height:20px; line-height: 20px; padding: 0 15px; background-color:@color_gray_13;border:1px solid @color_green_2; border-radius: 10px;}
+  }
+  .Int-round-right {float: right;
+    .wt-icon220-0 {vertical-align: middle; margin-top: -2px;}
+  }
+}
+.Int-round-border {border-top:1px solid @color_gray_10; margin: 10px 0 -10px 0;
+  .Int-round-left {background-color: @color_gray_13; margin-top: -15px; padding: 0 5px;}
+  .Int-round-right {background-color: @color_gray_13; margin-top: -12px; padding: 0 5px;}
+}
+
+.int-table {
+  width:100%; margin: 15px auto 30px; border-left:1px solid @color_gray_6;border-top:1px solid @color_gray_6;
+  th {line-height:38px; padding:0 15px; background-color: @color_gray_11; color:@color_gray_9; border-right:1px solid @color_gray_6;border-bottom:1px solid @color_gray_6;
+    span {color: @color_orange_2;}
+  }
+  td {line-height:38px; padding:0 15px;border-right:1px solid @color_gray_6;border-bottom:1px solid @color_gray_6;
+    .scoreDiv {width:100px; height: 100%; margin:0 10px 0 0;float: left; border-right: 1px dashed @color_gray_6;}
+    .font-br {float: left; line-height: 20px; padding-left: 1.5em; position: relative;
+      .wt-icon220-40 {position: absolute; left:-5px;}
+    }
+    .wt-icon220-40,.wt-icon420-180 {vertical-align: middle; margin-right:8px;}
+    a {color: @color_blue_4; text-decoration: underline; margin-left: 15px;}
+    .int-voice {width:100px; height:25px; line-height: 25px; padding: 0 5px; margin:0 20px 0 10px; position: relative; display: inline-block; vertical-align: middle; background-color: @color_gray_15; border-radius: 5px;
+      .tng {width:0; height:0px; position: absolute; left:-6px; top:8px; border-right:6px solid @color_gray_15; border-top:4px solid transparent; border-bottom:4px solid transparent;}
+      .wt-icon640-20 {vertical-align: middle; margin-top: -2px;}
+      font {float: right; font-size: 10px;}
+      .wt-icon10-80 {position: absolute; right: -15px; top:0;}
+    }
+  }
+}
+
+/*拟录用页面样式*/
+.emp-mainTit {font-size: 16px; color: @color_blue_4; margin: 0 0 20px 0; padding: 0 5px;
+  span {vertical-align: middle; margin: -2px 10px 0 0;}
+}
+.emp-smallTit {padding-left: 10px;
+  span {margin-right:5px;}
+}
+.offer-ul { overflow: hidden; padding-left: 15px;
+  li {line-height:30px;float: left; margin-right: 180px;
+    span {vertical-align: middle;}
+  }
+}
+.mail-content {line-height: 25px;
+  .m-c {text-indent: 2em;}
+}
+.empMain {padding:20px 30px; background-color: @color_gray_14; margin: 0 0 30px 5px; overflow: hidden;
+  .basicMess{margin-bottom: 30px; overflow: hidden;
+    li{width:50%; line-height: 25px; float: left;}
+    &:last-child{margin-bottom: 0px;}
+  }
+  .empMain-s-tit {font-size: 14px; color:@color_blue_4; margin:0 0 10px 0;}
+  .change-mess {margin: 0 0 20px 5px; overflow: hidden;
+    .change-mess-tit { float: left;color:@color_blue_4;}
+    ul { margin-left: 80px; height:25px;
+      overflow: hidden;
+      li {float: left;
+        &:nth-child(1) {width:150px}
+        &:nth-child(2) {width:70px}
+        &:nth-child(3) {color:@color_orange_2}
+      }
+    }
+  }
+  .emp-r-num,.emp-r-num-border {font-size: 16px; color: @color_blue_4; margin: 0 0 25px 0; padding: 20px 5px 0; border-top: 1px solid @color_gray_6;
+     span {vertical-align: middle; margin: -2px 10px 0 0;}
+     .wt-icon480-20,.wt-icon460-20 {float: right; margin-top: 3px;}
+     &:first-child {border:none;}
+     &:last-child {margin: 0;}
+   }
+  .emp-r-num-border { margin: 30px 0 10px 0; padding: 0px;
+    span {margin:0;}
+    .wt-icon580-60 {float: right; margin-top: -11px; background-color: @color_gray_14; padding: 0 5px;}
+    .wt-icon660-0 {margin-top: -25px;background-color: @color_gray_14; padding: 0 5px;}
+    .round {display:inline-block; margin-top: -25px;background-color: @color_gray_14; padding: 0 15px 0 5px;}
+    .wt-button-15,.wt-button-16 {margin-top: -25px;}
+    &:first-child {border-top: 1px solid @color_gray_6;}
+  }
+  .emp-process {margin:0 10px 10px;border-left: 1px dashed @color_blue_4;
+    .exa-app { margin:0 0 20px -10px;color: @color_blue_4;
+      span {vertical-align: middle; margin: -2px 17px 0 0; background-color:@color_gray_14 ;}
+    }
+    .exa-time {margin:0 0 20px 28px;
+      span {vertical-align: middle; margin: -2px 5px 0 0;}
+    }
+    .exa-mess {padding:10px 20px; position: relative; border:1px solid @color_gray_6; background-color: @color_gray_13; margin: 0 0 20px 20px;
+      table {width:100%;
+        td {width:50%; line-height: 30px;
+          .c-o {color:@color_orange_2; }
+          .c-g {color:@color_green_3; }
+        }
+      }
+      .l-trg {width:15px; height: 16px; position: absolute; left: -15px; top:30px; display:block; background: url("../../candidate/images/left-triangle.png")}
+    }
+  }
+}
+.basicMess-ul{margin:0 15px 30px; overflow: hidden;
+  li{width:33%; line-height: 25px; float: left;}
+  &:last-child{margin-bottom: 0px;}
+}
+
+
+/*全部应聘页面样式*/
+.apply-prcs {margin:0 10px 10px;border-left: 1px solid @color_gray_10;
+  .exa-app { margin:0 0 20px -10px;
+    span {vertical-align: middle; margin: -2px 17px 0 0; background-color:@color_gray_13 ;}
+    &.hover {color: @color_blue_4;}
+  }
+  .b-c-b{background-color: @color_blue_6; position: relative;
+    .l-trg {width:15px; height: 15px;transform:rotate(45deg); border-left:1px solid @color_gray_6; border-bottom:1px solid @color_gray_6; position: absolute; left: -9px; top:30px; display:block; background-color:@color_blue_6 }
+  }
+  .b-c-g{background-color: @color_gray_14; position: relative;
+    .l-trg {width:15px; height: 15px;transform:rotate(45deg); border-left:1px solid @color_gray_6; border-bottom:1px solid @color_gray_6; position: absolute; left: -9px; top:30px; display:block; background-color:@color_gray_11}
+  }
+  .b-c-w{background-color: @color_gray_13; position: relative;
+    .l-trg {width:15px; height: 15px;transform:rotate(45deg); border-left:1px solid @color_gray_6; border-bottom:1px solid @color_gray_6; position: absolute; left: -9px; top:30px; display:block; background-color:@color_gray_13}
+  }
+  .exa-mess {padding:10px 20px; position: relative; border:1px solid @color_gray_6; margin: 0 0 20px 20px;
+    ul {padding:0 10px; overflow: hidden;
+      li {width:33%; height: 40px; line-height: 40px; float: left;
+        .c-o {color:@color_orange_2; }
+        .c-g {color:@color_green_3; }
+      }
+    }
+    .invest {padding:15px 10px 10px; border-top:1px solid @color_gray_6;
+      a {margin-left: 15px; text-decoration: underline; color: @color_blue_4;}
+    }
+  }
+}
+
+
+/*修改简历页面样式*/
+.modify-main {height:auto; overflow: hidden;}
+.modify-left {margin-right: 240px; padding: 20px 30px; background-color: @color_gray_13;
+  .mdf-tit{margin:35px 0;
+    font { border-top:1px solid @color_gray_6; display:block;}
+    p { margin-top: -10px; padding-right: 10px; float: left; background-color: @color_gray_13;
+      a {color: @color_blue_1;}
+    }
+    span { margin-top: -10px; padding-left: 10px; float: right; background-color: @color_gray_13;}
+  }
+  .add-exp {height:25px;margin:0px 30px 10px; text-align: right;
+    span {vertical-align: middle; margin: -2px 7px 0 0;}
+    a { color: @color_orange_2; font-weight: bold;}
+  }
+
+  .tableDiv {padding:20px; background-color: @color_gray_8; border:1px solid @color_gray_6; }
+  .mdf-table {width:100%;
+    td{font-weight: bold;padding:8px 10px;}
+    td:nth-child(1) {text-align: right;}
+    td:nth-child(3) {text-align: right;}
+    .ipt-item,.ipt-item-half {height:34px; width: 100%; background-color: @color_gray_13; border:1px solid @color_gray_6;
+      input {width:85%; height:32px; padding-left: 10px; outline: none; border:none;}
+      span.wt-icon660-20 {float: right; margin: 5px 10px 0 0;}
+      span.wt-icon10-100 {float: right; margin: 10px 15px 0 0;}
+    }
+    .ipt-item-half {width: 47%; float: left;
+      input {width:75%;}
+      &:last-child {float: right}
+    }
+    .enclosure,.enclosure-g {color: @color_blue_4;
+      span {vertical-align: middle;}
+      font {font-size: 12px; font-weight: normal; color: @color_gray_5;}
+      a {font-size: 12px; color: @color_gray_2; text-decoration: underline; margin-left: 10px;}
+      a:last-child {color: @color_blue_4;}
+    }
+    .enclosure-g {color: @color_gray_2;}
+    .txt-content {width:100%; height: 100px; border:1px solid @color_gray_6; outline: none;}
+  }
+}
+.modify-right {width:225px; padding: 20px; float: right; background-color: @color_gray_13;
+   .mdf-step {border-left:2px solid @color_gray_6; position: relative; margin-bottom: 20px;
+     li {font-size: 12px; line-height: 25px; margin: 0 0 20px -2px;
+       span {vertical-align: middle; margin: 0 15px;}
+     }
+     li.hover {border-left:2px solid @color_blue_4; color: @color_blue_4;}
+   }
+   .mdf-btn-save,.mdf-btn-cancel{width:155px; height: 32px; line-height: 32px; text-align: center; display: block; margin:  10px auto;}
+   .mdf-btn-save {background-color:@color_blue_4; color: @color_gray_13}
+   .mdf-btn-cancel {background-color: @color_blue_6; color: @color_gray_2}
+ }
+
+.contract-strip {border-top:1px solid @color_gray_10; margin-top: 50px;padding-bottom: 10px;
+  .pos-name,.pos-name01 {font-size: 16px; float: left; padding: 5px 5px;  background-color: @color_gray_13; color: @color_blue_4; margin-top: -17px;}
+  .pos-name01 {color: @color_gray_1;}
+  .Apply-time {float: left;margin-top: -8px; color: @color_blue_4; padding: 0 10px 0 25px; font-size:12px; background-color: @color_gray_13;
+    .wt-icon680-0 {vertical-align: middle; margin: -3px 5px 0 0;}
+  }
+  .strip-r {float: right; padding: 5px 10px; margin-top: -15px; font-size: 12px; background-color: @color_gray_13;cursor: pointer;
+    .wt-icon40-90,.wt-icon50-90 {margin-left: 5px; vertical-align: middle; margin-top: -2px;}
+  }
+}
+
+/*简历详情 包裹栏*/
+.job-detail-content{
+
+}

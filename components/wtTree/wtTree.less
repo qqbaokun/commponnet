@@ -1,0 +1,14 @@
+@import "../../public/styles/icon.less";
+.wt-tree{
+  ul{list-style:none;}
+  li{cursor:pointer;
+    div{padding-left:28px;}
+    ul{display: none;}
+    ul li div{padding-left:39px;}
+  }
+  div{height:50px;line-height:50px; color: #333333; font-size: 14px; }
+  div.current{display:block;border-left: 4px solid @color_green_3; background: url('../../public/images/modify.png') no-repeat 160px 18px @color_gray_13; }
+  .arrow-r,.arrow-b{ margin: 0 5px 0 -15px;}
+  .arrow-r{.wt-icon70-90;}
+  .arrow-b{.wt-icon50-90;}
+}

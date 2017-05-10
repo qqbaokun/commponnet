@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../public/styles/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../public/js/libs/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+</head>
+<body>
+<article>
+    <section>
+        <h4>默认模式</h4>
+        <pre><code>wtDate.init($(".time"));</code><br /><button data-code="0">运行</button></pre>
+        <div><input class="time"/></div>
+    </section>
+    <section>
+        <h4>小时模式</h4>
+        <pre><code>wtDate.init($(".time1"),{
+                    todayBtn: false,
+                    startView: 0,
+                    minView: 0,
+                    maxView:1,
+                    format: 'hh:ii'
+            });</code><br/><button data-code="1">运行</button></pre>
+        <div><input class="time1"/></div>
+    </section>
+    <section>
+        <h4>年-月-日-小时模式</h4>
+        <pre><code>wtDate.init($(".time2"),{
+                    todayBtn: false,
+                    startView: 2,
+                    minView: 0,
+                    maxView:4,
+                    format: 'yyyy-mm-dd hh:ii'
+            });</code><br/><button data-code="2">运行</button></pre>
+        <div><input class="time2"/></div>
+    </section>
+</article>
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/libs/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../public/js/libs/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../../public/js/libs/wtDate/js/wtDate.js"></script>
+<script>
+    var codes = {};
+    $("pre code").each(function (index) {
+        var $this = $(this);
+        var code = $this.text();
+        codes[index] = new Function(code);
+    });
+    $(document).on("click", "button[data-code]", function () {
+        var id = $(this).data("code");
+        codes[id]();
+    });
+</script>
+</body>
+</html>

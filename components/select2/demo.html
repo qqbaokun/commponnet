@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select2</title>
+    <link href="../../public/styles/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/js/libs/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div style="margin: 50px;">
+    <select id="select_demo_1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</div>
+
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
+
+<script>
+
+    $( '#select_demo_1' ).selectpicker({
+        'header': '123213213211',
+        'style': 'btn-danger',
+        'actionsBox': true
+    });
+
+    //    $('#select_demo_1').selectpicker('setStyle', 'btn-danger');
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+/*图片路径*/
+/*
+ * 灰色
+ */
+/*
+ *蓝色
+ */
+/*
+ *红色
+ */
+/*
+ *绿色
+ */
+/*
+ *
+ */
+.wt-empty-result {
+  margin: 80px 0 100px;
+  text-align: center;
+}
+.wt-empty-result img {
+  margin-top: 20px;
+}
+.wt-empty-result .content {
+  color: #b2b2b2;
+  margin: 40px 0;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../public/styles/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../public/js/libs/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <link href="../../public/js/libs/jquery-ui-1.12.0/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="../../public/js/libs/artDialog/ui-dialog.css" rel="stylesheet"/>
+    <link href="../../public/js/libs/bootstrap-select/css/bootstrap-select.css" rel="stylesheet"/>
+    <link href="../../public/js/libs/ztree/css/metroStyle/metroStyle.css" rel="stylesheet"/>
+    <link href="../../public/js/libs/wtSearch/css/wtSelector.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="wt-search-container">
+
+</div>
+
+<script id="tpl_search_detail" type="text/html">
+    <div class="wt-search-container">
+
+        {{each datas as data}}
+        {{if data.type=="0"}}
+        <div class="keyword_box">
+            <div class="widget_container type" created="{{data | JsonToStr}}"></div>
+            <div class="separate">|</div>
+            <div class="keyword"><i></i><input type="text" placeholder="关键字"><em></em></div>
+        </div>
+        {{/if}}
+        {{/each}}
+
+        <div class="widget_box"><span>条件：</span>
+            {{each datas as data}}
+            {{if data.type!="0"}}
+            <div class="widget">
+                <span>{{data.name}}<i></i></span>
+                <div class="widget_container" created="{{data | JsonToStr}}"></div>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+
+        <div class="selected_box"><span>已选条件：</span></div>
+
+        <div class="btns_box">
+            <div class="wt-button-5" id="wt-search">搜索</div>
+            <div class="wt-button-link" id="wt-senior">高级查询</div>
+            <div class="wt-button-link" id="wt-save">保存为搜索器</div>
+            <div class="wt-button-link" id="wt-empty">清空已选条件</div>
+        </div>
+    </div>
+
+</script>
+
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/libs/artTemplate/js/template.js"></script>
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/common.js"></script>
+<script src="../../public/js/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="../../public/js/libs/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../public/js/libs/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../../public/js/libs/jquery-ui-1.12.0/jquery-ui.min.js"></script>
+<script src="../../public/js/libs/ztree/js/jquery.ztree.all.min.js"></script>
+<script src="../../public/js/libs/artDialog/dialog-plus-min.js"></script>
+<script src="../../public/js/libs/wtArtDialog/js/wtDialog.js"></script>
+<script src="../../public/js/libs/wtSelect/js/wtSelect.js"></script>
+<script src="../../public/js/libs/wtZtree/js/wtZtree.js"></script>
+<script src="../../public/js/libs/wtDate/js/wtDate.js"></script>
+<script src="../../public/js/libs/wtSearch/js/wtSelector.js"></script>
+<script>
+    var datas = [{
+        type: 0,
+        name: "关键字",
+        field: "keyword",
+        data: [{text: '公司', value: '0'}, {text: '学校', value: '1'}]
+    }, {
+        type: 1, name: "标题", field: "title"
+    }, {
+        type: 2, name: "职位", field: "position", data: [
+            {
+                id: 1, name: "test1", open: true, children: [
+                {id: 11, name: "test1_1"}, {id: 12, name: "test1_2"}]
+            },
+            {
+                id: 2, name: "test2", open: true, children: [
+                {id: 21, name: "test2_1"}, {id: 22, name: "test2_2"}]
+            }
+        ]
+    }, {
+        type: 3, name: "性别", field: "gender", data: [{text: '男', value: '0'}, {text: '女', value: '1'}]
+    }, {
+        type: 5,
+        name: "地区",
+        field: "area",
+        data: [{pId: 0, id: 1, text: "福建"}, {pId: 0, id: 2, text: "上海"}, {pId: 1, id: 11, text: "福州"}, {
+            pId: 2,
+            id: 21,
+            text: "徐汇"
+        }]
+    }, {
+        type: 6, name: "自动匹配", field: "autoComplete"
+    }, {
+        type: 7, name: "年龄区间", field: "age"
+    }, {
+        type: 8, name: "日期区间", field: "dates"
+    }, {
+        type: 9, name: "日期", field: "date"
+    }, {
+        type: 10,
+        name: "双选择",
+        field: "twoOpts",
+        data: [{name: "水果", data: [{text: "苹果", value: 11}, {text: "香蕉", value: 12}]}, {
+            name: "蔬菜",
+            data: [{text: "青菜", value: 21}, {text: "菠菜", value: 22}]
+        }]
+    }];
+    wtSelector.init("#wt-search-container", "tpl_search_detail", {datas: datas});
+
+</script>
+</body>
+</html>

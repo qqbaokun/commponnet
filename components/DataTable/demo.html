@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dataTable</title>
+    <link href="../../public/styles/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/styles/common.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/js/libs/dataTables/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div style="margin: 60px 40px;">
+    <table id="wt_test" class="wt-table stripe">
+
+    </table>
+</div>
+
+
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/libs/dataTables/js/jquery.dataTables.min.js"></script>
+<script>
+    
+    var checkboxRender = function (data, type, row, meta) {
+        return '<span>'+data+'</span>';
+    }
+
+    var isReadRender = function (data, type, row, meta) {
+        if( data ){
+            return '<i class="wt-icon360-20"></i>' ;
+        }else{
+            return '<i class="wt-icon380-20"></i>' ;
+        }
+    }
+
+    var nameColumnsRender = function (data, type, row, meta) {
+        return '<span>王小贱</span><i class="wt-table-name-oper"></i>' ;
+    }
+
+    var labelColumnsRender = function (data, type, row, meta) {
+        var html = '';
+        var labelList = data.split(',');
+        for( var i = 0 ; i < labelList.length ; i++ ){
+            var text = labelList[i] ;
+            if( i == 2 ){
+                html += '<span class="badge badge-warning">更多</span> <span class="triangle"></span>';
+                break;
+            }else{
+                html += '<span class="badge badge-success">'+text+'</span>';
+            }
+        }
+
+        return html ;
+    }
+
+    var channelColumnsRender = function (data, type, row, meta) {
+        var html = '';
+        var labelList = data.split(',');
+        for( var i = 0 ; i < labelList.length ; i++ ){
+            var text = labelList[i] ;
+            if( i == 1 ){
+                html += '<span class="triangle"></span>';
+                break ;
+            }else{
+                html += '<span class="badge badge-success">'+text+'</span>';
+            }
+        }
+        return html ;
+    }
+
+    $( '#wt_test' ).DataTable({
+        searching: false,
+        pagingType:'full_numbers' ,
+        scrollX: '1400px',
+        data:[
+            {id:"test1",isRead: 0, name: '王晓婷1',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin,51', 'sendStatus': '未发送'},
+            {id:"test2",isRead: 0,name: '王晓婷2',label: '211,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test3",isRead: 1,name: '王晓婷3',label: '211',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin,51', 'sendStatus': '未发送'},
+            {id:"test4",isRead: 0,name: '王晓婷4',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test5",isRead: 1,name: '王晓婷5',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test6",isRead: 1,name: '王晓婷6',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test7",isRead: 1,name: '王晓婷7',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test8",isRead: 1,name: '王晓婷8',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test9",isRead: 1,name: '王晓婷9',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test10",isRead: 1,name: '王晓婷10',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test11",isRead: 1,name: '王晓婷11',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test12",isRead: 1,name: '王晓婷12',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test13",isRead: 1,name: '王晓婷13',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test14",isRead: 1,name: '王晓婷14',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test15",isRead: 1,name: '王晓婷15',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test16",isRead: 1,name: '王晓婷16',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+            {id:"test17",isRead: 1,name: '王晓婷20',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'}
+        ],
+        columns: [
+            {data: 'id', title: '<i class="wt-icon360-20"></i>', render: checkboxRender, width: '40px', defaultContent: '暂无',orderable: false},
+            {data: 'isRead', title: '<i class="wt-icon360-20"></i>', defaultContent: '暂无', render: isReadRender,width: '40px',orderable: false},
+            {data: 'name',title: '姓名', defaultContent: '暂无', render: nameColumnsRender },
+            {data: 'label',title: '标签', defaultContent: '暂无', render: labelColumnsRender,orderable: false},
+            {data: 'education',title: '学历', defaultContent: '暂无'},
+            {data: 'position',title: '应聘职位', defaultContent: '暂无'},
+            {data: 'meet_data',title: '应聘日期', defaultContent: '暂无'},
+            {data: 'source',title: '简历来源', defaultContent: '暂无', render: channelColumnsRender,orderable: false},
+            {data: 'sendStatus',title: '发送状态', defaultContent: '暂无'}
+        ],
+        // 表格重绘后
+        drawCallback: function () {
+//            alert( '表格重绘了' );
+        },
+        // 表格重绘前
+        preDrawCallback: function () {
+//            alert( '表格重绘前' );
+        },
+        rowCallback: function (row, data, index) {
+            if( index == 0 ){
+                $( 'td:eq(1)', row ).on( 'click', function () {
+                    alert( '第一行第二列' );
+                } )
+            }
+            console.log( row, data, index );
+        }
+    });
+
+
+</script>
+</body>
+</html>

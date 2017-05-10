@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>候选人-通用-设置</title>
+    <link href="../../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../public/js/libs/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/styles/pop.css" rel="stylesheet" type="text/css"/>
+    <style>
+        ul.tree {
+            margin-top: 100px;
+        }
+
+        ul.tree > li .wt-node {
+            display: inline-block;
+        }
+
+        li .wt-pop-container:hover > .wt-pop-panel {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<h2>鼠标悬浮-暂存夹</h2>
+<ul class="tree">
+    <li>
+        <div class="wt-node">
+            <span>node1</span>
+            <div class="wt-pop-container">
+                <div class='wt-pop-panel'>
+                    <div class="wt-pop-content">
+                        <div class="wt-arrow-a"></div>
+                        <div class="wt-arrow-b"></div>
+                        <ul>
+                            <li><i class="wt-icon480-40"></i>添加</li>
+                            <li><i class="wt-icon520-40"></i>删除</li>
+                            <li><i class="wt-icon560-40"></i>重命名</li>
+                            <li><i class="wt-icon0-60"></i>上移</li>
+                            <li><i class="wt-icon40-60"></i>下移</li>
+                            <li><i class="wt-icon80-60"></i>升级</li>
+                            <li><i class="wt-icon120-60"></i>降级</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="wt-node">
+            <span>node2</span>
+            <div class="wt-pop-container">
+                <div class='wt-pop-panel'>
+                    <div class="wt-pop-content">
+                        <div class="wt-arrow-a"></div>
+                        <div class="wt-arrow-b"></div>
+                        <ul>
+                            <li><i class="wt-icon480-40"></i>添加</li>
+                            <li><i class="wt-icon520-40"></i>删除</li>
+                            <li><i class="wt-icon560-40"></i>重命名</li>
+                            <li><i class="wt-icon0-60"></i>上移</li>
+                            <li><i class="wt-icon40-60"></i>下移</li>
+                            <li><i class="wt-icon80-60"></i>升级</li>
+                            <li><i class="wt-icon120-60"></i>降级</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/bootstrap.min.js"></script>
+<script>
+    $(".tree").find(".wt-node").hover(function () {
+        $(this).find(".wt-pop-container").show();
+    },function () {
+        $(this).find(".wt-pop-container").hide();
+    });
+</script>
+</body>
+</html>

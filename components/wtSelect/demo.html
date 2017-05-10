@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉框</title>
+    <link href="../../public/styles/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/js/libs/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/styles/components.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<article>
+    <section>
+        <h2>插件初始化方法（基于数据, 推荐 || 直接渲染select节点）</h2>
+        <pre class="html">
+            // 基于数据创建
+            &lt;div id="wrapper_div"&gt;&lt;/div&gt;
+            // 基于节点创建
+            &lt;select id="wrapper_select"&gt;&lt;option&gt;社会招聘2&lt;/option&gt;&lt;option&gt;校园招聘2&lt;/option&gt;&lt;option&gt;猎头招聘2&lt;/option&gt;&lt;/select&gt;
+        </pre>
+        <pre><code>
+            var __select = $( '#wrapper_div' ),
+                options = {
+                    data: [
+                        {text: '社会招聘' , value: 1},
+                        {text: '校园招聘' , value: 2},
+                        {text: '猎头招聘' , value: 3}
+                    ]
+                }
+            wtSelect.create( __select, options );
+
+            var __select2 = $( '#wrapper_select' ) ;
+            wtSelect.create( __select2 );
+
+        </code><button data-code="0">运行</button></pre>
+        <div id="wrapper_div" style="display: inline-block; margin-right: 20px;"></div><select id="wrapper_select"><option>社会招聘2</option><option>校园招聘2</option><option>猎头招聘2</option></select>
+    </section>
+
+    <section>
+        <h2>skin 插件样式选择</h2>
+        <pre><code>
+            var __select_firstGrade = $( '#select_firstGrade' ),
+                options = {
+                    skin: 'first-grade',
+                    width: '180px',
+                    data: [
+                        {text: '社会招聘' , value: 1},
+                        {text: '校园招聘' , value: 2},
+                        {text: '猎头招聘' , value: 3}
+                    ]
+                }
+            wtSelect.create( __select_firstGrade, options );
+
+            var __select_searchSelect = $(  '#search_select' ),
+                searchSelectOptions = {
+                    skin: 'search-select',
+                    width: 'auto',
+                    data: [
+                        {text: '社会招聘' , value: 1},
+                        {text: '校园招聘' , value: 2},
+                        {text: '猎头招聘' , value: 3}
+                    ]
+                }
+            wtSelect.create( __select_searchSelect, searchSelectOptions );
+
+        </code><button data-code="1">运行</button></pre>
+        <div id="select_firstGrade" style="display: inline-block; margin-right: 20px;"></div>
+        <div id="search_select" style="display: inline-block; margin-right: 20px;"></div>
+    </section>
+
+    <section>
+        <h2>事件添加</h2>
+        <pre><code>
+            var __select = $( '#select_listener' ),
+                options = {
+                    data: [
+                        {text: '社会招聘' , value: 1},
+                        {text: '校园招聘' , value: 2},
+                        {text: '猎头招聘' , value: 3}
+                    ],
+                    beforeShowListener: function(){
+                        alert( 'beforeShow' );
+                    },
+                    changedListener: function( data, option, fullData ){
+                       console.log( data, option, fullData );
+                       alert( 'changed' );
+                    },
+                    beforeHideListener: function(){
+                        alert( 'beforeHide' );
+                    }
+
+                }
+
+              wtSelect.create( __select, options );
+
+
+
+        </code><button data-code="2">运行</button></pre>
+       <div id="select_listener" style="display: inline-block; margin-right: 20px;"></div>
+        <!--<select id="select_listener"><option value="1">社会招聘</option><option value="2">校园招聘</option><option value="3">猎头招聘</option></select>-->
+    </section>
+
+    <section>
+        <h2>插件销毁</h2>
+        <pre><code>
+            var __select = $( '#select_destroy' ),
+                options = {
+                    data: [
+                        {text: '社会招聘' , value: 1},
+                        {text: '校园招聘' , value: 2},
+                        {text: '猎头招聘' , value: 3}
+                    ]
+                }
+            var instance = wtSelect.create( __select, options );
+
+            // 销毁插件  2s后销毁
+            setTimeout( function(){
+                wtSelect.destroy( instance );
+            },2000 )
+
+
+        </code><button data-code="3">运行</button></pre>
+
+        <div id="select_destroy" style="display: inline-block; margin-right: 20px;"></div>
+
+    </section>
+
+    <section>
+        <h2>插件刷新</h2>
+        <pre><code>
+            var __select = $( '#select_refresh' ),
+                options = {
+                    data: [
+                        {text: '社会招聘' , value: 1},
+                        {text: '校园招聘' , value: 2},
+                        {text: '猎头招聘' , value: 3}
+                    ]
+                }
+            var instance = wtSelect.create( __select, options );
+
+            wtSelect.refresh( instance );
+
+
+        </code><button data-code="4">运行</button></pre>
+
+        <div id="select_refresh" style="display: inline-block; margin-right: 20px;"></div>
+
+    </section>
+
+    <section>
+        <h2>插件状态更新</h2>
+        <pre><code>
+            var __select = $( '#select_update' ),
+                options = {
+                    data: [
+                        {text: '社会招聘' , value: 1},
+                        {text: '校园招聘' , value: 2},
+                        {text: '猎头招聘' , value: 3}
+                    ]
+                }
+            var instance = wtSelect.create( __select, options );
+
+            //2s后 刷新数据
+
+            var newData = [
+                    {text: '__社会招聘__' , value: 4},
+                    {text: '__校园招聘__' , value: 5},
+                    {text: '__猎头招聘__' , value: 6}
+            ]
+
+            setTimeout( function(){
+                wtSelect.update( instance, { data: newData } );
+            },2000 )
+
+
+
+        </code><button data-code="5">运行</button></pre>
+
+        <div id="select_update" style="display: inline-block; margin-right: 20px;"></div>
+
+    </section>
+
+    <section>
+        <h2>初始化选中</h2>
+        <pre><code>
+            var __select = $( '#select_init_selected' ),
+                options = {
+                    defaultSelected: 's3',
+                    data: [
+                        {text: '社会招聘' , value: 's1'},
+                        {text: '校园招聘' , value: 's2'},
+                        {text: '猎头招聘' , value: 's3'}
+                    ]
+                }
+
+            var instance = wtSelect.create( __select, options );
+
+
+        </code><button data-code="6">运行</button></pre>
+
+        <div id="select_init_selected" style="display: inline-block; margin-right: 20px;"></div>
+
+    </section>
+
+    <section>
+        <h2>api 选中</h2>
+        <pre><code>
+            var __select = $( '#select_change_selected' ),
+                options = {
+                    data: [
+                        {text: '社会招聘' , value: 's1'},
+                        {text: '校园招聘' , value: 's2'},
+                        {text: '猎头招聘' , value: 's3'}
+                    ]
+                }
+
+            var instance = wtSelect.create( __select, options );
+
+            wtSelect.val( instance, 's2' );
+
+        </code><button data-code="7">运行</button></pre>
+
+        <div id="select_change_selected" style="display: inline-block; margin-right: 20px;"></div>
+
+    </section>
+
+    <section>
+        <h2>api 显示</h2>
+        <pre><code>
+            var __select = $( '#select_show_selected' ),
+                options = {
+                    data: [
+                        {text: '社会招聘' , value: 's1'},
+                        {text: '校园招聘' , value: 's2'},
+                        {text: '猎头招聘' , value: 's3'}
+                    ]
+                }
+
+            var instance = wtSelect.create( __select, options );
+
+            wtSelect.show( instance );
+
+        </code><button data-code="8">运行</button></pre>
+
+        <div id="select_show_selected" style="display: inline-block; margin-right: 20px;"></div>
+
+    </section>
+
+</article>
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="../../public/js/libs/wtSelect/js/wtSelect.js"></script>
+<script>
+    var codes = {};
+    $("pre code").each(function (index) {
+        var $this = $(this);
+        var code = $this.text();
+        codes[index] = new Function(code);
+    });
+    $(document).on("click", "button[data-code]", function () {
+        var id = $(this).data("code");
+        codes[id]();
+    });
+
+
+</script>
+</body>
+</html>

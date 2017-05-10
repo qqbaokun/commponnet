@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <link href="../../public/styles/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../../public/js/libs/dataTables/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/js/libs/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/js/libs/wtSwitch/css/wtSwitch.css" type="text/css" rel="stylesheet" />
+    <link href="../../public/js/libs/artDialog/ui-dialog.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/styles/common.css" rel="stylesheet" type="text/css"/>
+    <link href="../../components/artDialog/wtDialog.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div id="test_table"></div>
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/libs/dataTables/js/jquery.dataTables.js"></script>
+<script src="../../public/js/libs/wtTable/js/wtTable1.js"></script>
+<script src="../../public/js/libs/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="../../public/js/libs/wtSelect/js/wtSelect.js"></script>
+<script src="../../public/js/libs/wtSwitch/js/wtSwitch.js"></script>
+<script src="../../public/js/effect.js"></script>
+<script src="../../public/js/libs/artDialog/dialog-plus-min.js"></script>
+<script src="../artDialog/wtDialog.js"></script>
+<script src="../wtSelector/wtKeyword.js"></script>
+<script>
+
+    // 模拟请求得到的数据
+    var tableData = [
+        {id:"test1",isRead: 0, name: '王晓婷1',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin,51', 'sendStatus': '未发送', test: { test2: {  test3: '3'} }},
+        {id:"test2",isRead: 0,name: '王晓婷2',label: '211,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test3",isRead: 1,name: '王晓婷3',label: '211',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin,51', 'sendStatus': '未发送'},
+        {id:"test4",isRead: 0,name: '王晓婷4',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test5",isRead: 1,name: '王晓婷5',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test6",isRead: 1,name: '王晓婷6',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test7",isRead: 1,name: '王晓婷7',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test8",isRead: 1,name: '王晓婷8',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test9",isRead: 1,name: '王晓婷9',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test10",isRead: 1,name: '王晓婷10',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test11",isRead: 1,name: '王晓婷11',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test12",isRead: 1,name: '王晓婷12',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test13",isRead: 1,name: '王晓婷13',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test14",isRead: 1,name: '王晓婷14',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test15",isRead: 1,name: '王晓婷15',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test16",isRead: 1,name: '王晓婷16',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'},
+        {id:"test17",isRead: 1,name: '王晓婷20',label: '211,985,多投',education: '本科', position: 'Java开发工程师', meet_data: '2016-09-18', 'source': 'linkedin', 'sendStatus': '未发送'}
+    ];
+
+    // 对应的列配置
+    var columnsData =  [
+        {data: 'id', render: 'checkbox'},
+        {data: 'isRead', render: 'isRead'},
+        {data: 'name',title: '姓名', render: 'button',
+            buttonChild: [
+                { text: '操作1', click: function( data ){ alert( '操作1' ) } },
+                { text: '操作2', click: function( data ){ alert( '操作2' ) } },
+                { text: '操作3', click: function( data ){ console.log( data ) } }
+            ] },
+        {data: 'label',title: '标签',  render: 'labels'},
+        {data: 'education',title: '学历'},
+        {data: 'position',title: '应聘职位'},
+        {data: 'meet_data',title: '应聘日期'},
+        {data: 'source',title: '简历来源', render: 'channels'},
+        {data: 'sendStatus',title: '发送状态'},
+        {data: 'test.test2.test3',title: 'test'}
+    ];
+
+    var tableOptions = {
+        tool: {
+            enable: true,
+            button: true,
+            buttonData:  [ { text: '印简历', type: 'button', callback: function ( object ) { console.log( object ); } }, { text: '改简历', type: 'button' }, { text: '打印', type: 'button' } ]
+        },
+        table: {
+/*            "ajax": {
+                "url":"/example/resources/server_processing_customCUrl.php",
+                "data": function ( d ) {
+                    //添加额外的参数传给服务器
+                    d.extra_search = 'suibian';
+                }},*/
+            // ajax: '{{url}}',   url 地址
+            // ajax.dataSrc        数据路径
+            data: tableData,
+            columns: columnsData,
+            searching: false,
+            pagingType:'full_numbers' ,
+            scrollX: '1400px',
+            language:{
+                paginate:{
+                    first: '首页',
+                    previous: '上一页',
+                    next: '下一页',
+                    last: '最后一页'
+                }
+            },
+            rowCallback: function ( row, data, index ) {}
+        }
+    }
+
+    wtTable.create( $( '#test_table' ), tableOptions );
+</script>
+</body>
+</html>

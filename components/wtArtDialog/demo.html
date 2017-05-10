@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>artDialog</title>
+    <link href="../../public/js/libs/artDialog/ui-dialog.css" rel="stylesheet"/>
+    <link href="../../public/styles/components.css" rel="stylesheet"/>
+</head>
+<body>
+<article>
+    <section>
+        <h2>modal</h2>
+            <pre><code>wtDialog.modal({id:"#test",content:"hello world!"});</code><br /><button data-code="0">运行</button></pre>
+    </section>
+    <section>
+        <h2>tip</h2>
+            <pre><code>wtDialog.tip("hello world!2秒后自动关闭",2000);</code><br /><button data-code="1">运行</button></pre>
+    </section>
+    <section>
+        <h2 id="popover">popover</h2>
+            <pre><code>var d = wtDialog.popover({content:"hello world!", quickClose:true,selector:"#popover",align:"right top"});d.show();</code><br /><button data-code="2">运行</button></pre>
+    </section>
+    <section>
+        <h2 id="popover1">popover-skin</h2>
+        <pre><code>var d = wtDialog.popover({content:"hello world!",skin:"ui-popup-gray", quickClose:true,selector:"#popover1",align:"right"});d.show();</code><br /><button data-code="3">运行</button></pre>
+    </section>
+</article>
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/libs/artDialog/dialog-min.js"></script>
+<script src="../../public/js/libs/wtArtDialog/js/wtDialog.js"></script>
+<script>
+    var codes = {};
+    $("pre code").each(function (index) {
+        var $this = $(this);
+        var code = $this.text();
+        codes[index] = new Function(code);
+    });
+    $(document).on("click", "button[data-code]", function () {
+        var id = $(this).data("code");
+        codes[id]();
+    });
+</script>
+</body>
+</html>

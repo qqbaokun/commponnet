@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../../public/styles/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../public/js/libs/ztree/css/metroStyle/metroStyle.css" rel="stylesheet"/>
+</head>
+<body>
+<ul id="treeDemo" class="ztree"></ul>
+<button class="test">ok</button>
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/libs/ztree/js/jquery.ztree.all.min.js"></script>
+<script src="../../public/js/libs/wtZtree/js/wtZtree.js"></script>
+<script>
+    $(function () {
+        var zTreeObj;
+        var setting = {
+            check: {
+                enable: true,
+                chkStyle: "checkbox",
+                chkboxType: {"Y": "s", "N": "s"}
+            }
+        };
+        var zNodes = [
+            {
+                id: 1, name: "test1", open: true, children: [
+                {id: 11, name: "test1_1"}, {id: 12, name: "test1_2"}]
+            },
+            {
+                id: 2, name: "test2", open: true, children: [
+                {id: 21, name: "test2_1"}, {id: 22, name: "test2_2"}]
+            }
+        ];
+        zTreeObj = wtZtree.init($("#treeDemo"), setting, zNodes);
+
+        $(".test").on("click", function () {
+            var dialog = top.dialog.get(window);
+            var data = dialog.data;
+            //top.window.wtSelector.addLabel();
+            //top.dialog.get(window).close();
+            //top.dialog.get(window).data
+            dialog.close();
+        });
+    });
+</script>
+</body>
+</html>

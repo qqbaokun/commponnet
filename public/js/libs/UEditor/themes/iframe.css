@@ -1,0 +1,7 @@
+.wt-ueditor-template > div {
+  margin-bottom: 10px;
+}
+.wt-ueditor-template .wt-span {
+  padding: 5px;
+  background-color: #e5f2fe;
+}

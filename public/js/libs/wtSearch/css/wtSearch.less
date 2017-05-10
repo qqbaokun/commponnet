@@ -1,0 +1,27 @@
+@import "../../../../styles/base.less";
+@import "../../../../styles/button.less";
+@import "../../../../styles/icon.less";
+@img_url_icons: '../../../../images/icons.png';
+.wt-search-container{
+  .keyword_box{position:relative;margin-bottom:15px;background-color: @panel_color_gray;
+    .type{height:40px; line-height:40px; position:absolute; left:0;top:0;}
+    .separate{position: absolute;left:110px;top:25%;}
+    .keyword{margin-left:120px;
+      position:relative;
+      i{ vertical-align: middle; .wt-icon0-20; }
+      input{width:700px;height:40px;padding-left:0;padding-right:0; outline:none;text-indent: 5px; margin:0;border: none; background: @panel_color_gray; box-shadow: none;}
+      em{
+        .icon20;background-position: -20px -40px;position:absolute;top:10px;right:10px;
+      }
+    }
+  }
+  .widget_box{margin-bottom:15px;
+    >div{.inlblock;margin-right:15px;}
+  }
+  .selected_box{margin-bottom:15px;
+    >div span{.inlblock;  max-width: 100px;  overflow: hidden;  text-overflow: ellipsis;  white-space: nowrap; vertical-align: top;}
+  }
+  .btns_box{
+    >div{.mr10;}
+  }
+}

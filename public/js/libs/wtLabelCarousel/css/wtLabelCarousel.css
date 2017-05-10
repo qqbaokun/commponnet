@@ -1,0 +1,6 @@
+.wt-carousel-container{position: relative;display: inline-block;}
+.wt-carousel-wrapper{position: absolute;left: 0; top: 0;}
+ul.wt-carousel-hide{    padding: 10px 0px;}
+
+ul.wt-carousel-hide li{ line-height: 30px; padding: 0 10px;}
+ul.wt-carousel-hide li:hover{ background: #f2f2f2; }

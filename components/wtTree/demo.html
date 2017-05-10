@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="wtTree.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        section {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div id="tree">
+
+    </div>
+</section>
+<script src="../../public/js/jquery.min.js"></script>
+<script src="wtTree.js"></script>
+<script>
+    var datas = [{
+        name: "待处理", isNew: false, children: []
+    }, {
+        name: "笔试",
+        isNew: true,
+        isOpen: false,
+        children: [{name: "待发通知", isNew: true, children: []}, {name: "已发通知", isNew: false, children: []}]
+    }];
+
+
+    new wtTree({
+        container: "#tree",
+        datas:datas,
+        pattern:"simple",
+        onClick:function (node) {
+            
+        }
+    })
+</script>
+</body>
+</html>

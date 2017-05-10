@@ -1,0 +1,53 @@
+.wt-switch {
+  position: relative;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+.wt-switch input[type=checkbox],
+.wt-switch input[type=radio] {
+  margin: 0;
+  vertical-align: middle;
+  opacity: 0;
+  cursor: pointer;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+.wt-disable input[type=checkbox],
+.wt-disable input[type=radio] {
+  cursor: not-allowed;
+}
+.wt-switch-checkbox {
+  background-image: url("checkbox.png");
+  background-position: 0 0px;
+}
+.wt-switch-checkbox input {
+  width: 20px;
+  height: 20px;
+}
+.wt-switch-checkbox.on {
+  background-position: 0 -20px;
+}
+.wt-switch-radio {
+  background-image: url("radio.png");
+  background-position: -25px 0;
+}
+.wt-switch-radio input {
+  width: 20px;
+  height: 20px;
+}
+.wt-switch-radio.on {
+  background-position: 0 0;
+}
+.wt-switch-special {
+  background-image: url("switch.png");
+  background-position: 0 0;
+}
+.wt-switch-special input {
+  width: 65px;
+  height: 39px;
+}
+.wt-switch-special.on {
+  background-position: 0 -37px;
+}
