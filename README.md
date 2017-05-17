@@ -2,7 +2,7 @@ jQuery封装组件
 
 
 /**
- * Created by ThinkPad on 2016/7/9.
+ * Created by bbk on 2016/7/9.
  */
 
 (function ($) {
